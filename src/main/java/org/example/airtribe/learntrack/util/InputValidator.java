@@ -1,0 +1,18 @@
+package org.example.airtribe.learntrack.util;
+
+
+import org.example.airtribe.learntrack.exception.InvalidInputException;
+
+public class InputValidator {
+    public static void validateString(String input, String fieldName) throws InvalidInputException {
+        if (input == null || input.trim().isEmpty()) {
+            throw new InvalidInputException(fieldName + " cannot be empty.");
+        }
+    }
+    
+    public static void validatePositiveNumber(int number, String fieldName) throws InvalidInputException {
+        if (number <= 0) {
+            throw new InvalidInputException(fieldName + " must be a positive number.");
+        }
+    }
+}
